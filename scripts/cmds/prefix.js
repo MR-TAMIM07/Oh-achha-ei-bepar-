@@ -24,7 +24,7 @@ body: `
 ‣ 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 ⓕ
 ‎〆 Tʌɱɩɱﮩﮩﮩᰔ
 \n\n\n  `,
-attachment: await global.utils.getStreamFromURL("https://files.catbox.moe/ckw4ke.mp4")
+attachment: await global.utils.getStreamFromURL("https://files.catbox.moe/9znfvm.mp4")
 });
 }
 }
