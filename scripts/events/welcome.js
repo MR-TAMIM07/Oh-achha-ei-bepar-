@@ -1,13 +1,13 @@
 const axios = require("axios");
-const { getTime, drive } = global.utils;
+const { getTime } = global.utils;
 
 if (!global.temp.welcomeEvent) global.temp.welcomeEvent = {};
 
 module.exports = {
   config: {
     name: "welcome",
-    version: "2.0",
-    author: "𝐓𝐚𝐦𝐢𝐦𓆩🌀",
+    version: "2.1",
+    author: "𝐓𝐚𝐦𝐢𝐦",
     category: "events"
   },
 
@@ -48,7 +48,8 @@ module.exports = {
       if (nickNameBot)
         api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
 
-      const image = await drive.getFile("https://files.catbox.moe/77ww0u.jpg", "stream");
+      const image = (await axios.get("https://files.catbox.moe/77ww0u.jpg", { responseType: "stream" })).data;
+
       return message.send({
         body: getLang("welcomeMessage", prefix),
         attachment: image
@@ -73,7 +74,7 @@ module.exports = {
       const bannedList = threadData.data.banned_ban || [];
       const threadName = threadData.threadName;
       const userName = [], mentions = [];
-      let multiple = data.length > 1;
+      const multiple = data.length > 1;
 
       for (const user of data) {
         if (bannedList.some(i => i.id == user.userFbId)) continue;
@@ -102,10 +103,8 @@ module.exports = {
 
       form.body = welcomeMessage;
 
-      // Static image to send with profile pictures
-      const staticImage = await drive.getFile("https://files.catbox.moe/77ww0u.jpg", "stream");
+      const staticImage = (await axios.get("https://files.catbox.moe/77ww0u.jpg", { responseType: "stream" })).data;
 
-      // Profile pictures
       const profilePics = await Promise.allSettled(
         mentions.map(user =>
           axios.get(
