@@ -62,9 +62,9 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\n\n╭─────✰[𝗘𝗡𝗝𝗢𝗬]\n│>𝗧𝗢𝗧𝗔𝗟 𝗖𝗠𝗗𝗦: [${totalCommands}].\n│𝗧𝗬𝗣𝗘𝖳:[ ${prefix}𝗛𝗘𝗟𝗣 \n│.]\n╰────────────✰`;
       msg += ``;
-      msg += `\n╭─────✰\n│ ╣[ᴛꫝᴍɪᴍ_𝙱𝙾𝚃]╠\n╰────────────✰`; 
+      msg += `\n╭─────✰\n│ ╣[ᴛꫝᴍɪᴍ_𝙱𝙾𝚃🎀]╠\n╰────────────✰`; 
 
-const helpListImages = [ "https://files.catbox.moe/7rygvq.mp4" ];
+const helpListImages = [ "https://files.catbox.moe/ejuexc.mp4" ];
 
 
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
