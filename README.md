@@ -1,50 +1,36 @@
-# 𓆩𝑻𝑨𝑴𝑰𝑴_𝑩𝑶𝑻𓆪
+# ✨ Welcome to **MR-TAMIM07**'s GitHub! ✨
 
-## Original Source Code
-- **GitHub Repository:** [https://github.com/ntkhang03/Goat-Bot-V2](https://github.com/ntkhang03/Goat-Bot-V2)
+👋 Hey there! I'm **MR-TAMIM07**, a passionate coder and lifelong learner.
 
-## Project Updates
-This version includes fixes by SAIFUL ISLAM  to the FCA (Facebook Chat API) implementation.
+---
 
-### Key Modifications
-- Updated files:
-  1. `bot/login/login.js`
-  2. `package.json`
-  3. `package-lock.json`
+## 🚀 About Me
+- 🔭 Currently working on **awesome projects** and leveling up my skills!  
+- 🌱 Exploring **JavaScript**, **Node.js**, **Discord Bots**, and more...  
+- 💬 Always open for **collaboration** and new opportunities.  
+- 📫 Reach me here: [GitHub Profile](https://github.com/MR-TAMIM07)  
 
-### Recommendation 
-- Use updated files
-- create a blank `account.dev.txt` file
-- use node 20
+---
 
-## Custom Facebook API Implementation
-A custom Facebook API has been used to fix and improve the bot's functionality.
+## 💡 Skills & Tools
+| Programming Languages | Tools & Technologies  | Interests          |
+|-----------------------|-----------------------|--------------------|
+| ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge) | ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white&style=for-the-badge) | 💻 Web Development |
+| ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white&style=for-the-badge) | ![VS Code](https://img.shields.io/badge/-VSCode-007ACC?logo=visual-studio-code&logoColor=white&style=for-the-badge) | 🤖 Bot Development |
+| ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge) | ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white&style=for-the-badge) | 🚀 Automation |
 
-## Installation
-1. Clone the original repository
-2. Replace the specified files with the updated versions
-3. Follow my original installation instructions
+---
 
-## Troubleshooting
-For any issues or support:
-- **Telegram:** [Telegram](https://telegram.me/@IMTAMIMOK69)
-- **Facebook:** [Facebook](https://www.facebook.com/its.x.tamim)
-- **Instagram:** [Instagram](https://www.instagram.com/tamim_4047)
+## 📊 GitHub Stats  
+![MR-TAMIM07's GitHub stats](https://github-readme-stats.vercel.app/api?username=MR-TAMIM07&show_icons=true&theme=dracula)
 
-## Additional Resources
-- **C3C Files Download:** [Download Here](https://drive.google.com/file/d/1-MWoTyqES-V4H-QAIQDiC34-XMKju8hA/view?usp=drivesdk)
+---
 
-### Notes
-- Ensure you extract cookies from the C3C files
-- Place extracted cookies in `account.txt`
-- Follow the bot setup instructions carefully
+## 🔗 Let's Connect!
 
-### Error Solve
-- If you facing cookies missing or `account.dev.txt` file missing error, than put your cookies in `account.txt` and make blank file `account.dev.txt`
-- If you facing problem with npm than update you `package.json` and `package-lock.json` from this repo and use node version 20 with npm version 10
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/MR-TAMIM07)  
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge)](https://linkedin.com/in/your-linkedin)  
 
-## Disclaimer
-This is a modified version of the original SAIF-BOT. Use at your own discretion.
+---
 
-## Support
-For any technical support or inquiries, please contact the maintainer through the provided social media links.
+⭐️ Thanks for stopping by! Keep coding and stay awesome! 🚀
