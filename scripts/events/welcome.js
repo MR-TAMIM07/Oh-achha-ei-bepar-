@@ -6,8 +6,8 @@ if (!global.temp.welcomeEvent) global.temp.welcomeEvent = {};
 module.exports = {
   config: {
     name: "welcome",
-    version: "2.1",
-    author: "𝐓𝐚𝐦𝐢𝐦",
+    version: "3.1",
+    author: "𝐓𝐚𝐦𝐢𝐦𓆩🌀",
     category: "events"
   },
 
@@ -30,7 +30,8 @@ module.exports = {
         `🌸 𝐀𝐒𝐒𝐀𝐋𝐀𝐌𝐔𝐀𝐋𝐀𝐈𝐊𝐔𝐌 ꨄ︎\n\n` +
         `👋 𝐇𝐞𝐥𝐥𝐨 {userNameTag}\n` +
         `🌟 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 {multiple} 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩: 『{boxName}』\n` +
-        `🕒 𝐇𝐚𝐯𝐞 𝐀 𝐁𝐥𝐞𝐬𝐬𝐞𝐝 {session} 💫`
+        `🕒 𝐇𝐚𝐯𝐞 𝐀 𝐁𝐥𝐞𝐬𝐬𝐞𝐝 {session} 💫\n\n` +
+        `💖 𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪`
     }
   },
 
@@ -43,16 +44,23 @@ module.exports = {
     const dataAddedParticipants = event.logMessageData.addedParticipants;
     const { nickNameBot } = global.GoatBot.config;
 
+    // Auto enable welcome
+    await threadsData.set(threadID, {
+      settings: {
+        sendWelcomeMessage: true
+      }
+    });
+
     // Bot joined
     if (dataAddedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
       if (nickNameBot)
         api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
 
-      const image = (await axios.get("https://files.catbox.moe/77ww0u.jpg", { responseType: "stream" })).data;
+      const video = (await axios.get("https://files.catbox.moe/kioug2.mp4", { responseType: "stream" })).data;
 
       return message.send({
         body: getLang("welcomeMessage", prefix),
-        attachment: image
+        attachment: video
       });
     }
 
@@ -68,8 +76,6 @@ module.exports = {
 
     global.temp.welcomeEvent[threadID].joinTimeout = setTimeout(async () => {
       const threadData = await threadsData.get(threadID);
-      if (threadData?.settings?.sendWelcomeMessage === false) return;
-
       const data = global.temp.welcomeEvent[threadID].dataAddedParticipants;
       const bannedList = threadData.data.banned_ban || [];
       const threadName = threadData.threadName;
@@ -103,21 +109,9 @@ module.exports = {
 
       form.body = welcomeMessage;
 
-      const staticImage = (await axios.get("https://files.catbox.moe/kioug2.mp4", { responseType: "stream" })).data;
+      const video = (await axios.get("https://files.catbox.moe/kioug2.mp4", { responseType: "stream" })).data;
 
-      const profilePics = await Promise.allSettled(
-        mentions.map(user =>
-          axios.get(
-            `https://graph.facebook.com/${user.id}/picture?height=720&width=720&access_token=${api.getAccessToken()}`,
-            { responseType: "stream" }
-          ).then(res => res.data)
-        )
-      );
-
-      form.attachment = profilePics
-        .filter(r => r.status === "fulfilled")
-        .map(r => r.value)
-        .concat(staticImage);
+      form.attachment = video;
 
       await message.send(form);
       delete global.temp.welcomeEvent[threadID];
