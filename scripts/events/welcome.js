@@ -103,7 +103,7 @@ module.exports = {
 
       form.body = welcomeMessage;
 
-      const staticImage = (await axios.get("https://files.catbox.moe/77ww0u.jpg", { responseType: "stream" })).data;
+      const staticImage = (await axios.get("https://files.catbox.moe/kioug2.mp4", { responseType: "stream" })).data;
 
       const profilePics = await Promise.allSettled(
         mentions.map(user =>
