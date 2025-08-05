@@ -1,7 +1,8 @@
-# ✨ Welcome to **MR-TAMIM07**'s GitHub! ✨
+# ✨ Welcome to 𝐓𝐀𝐌𝐈𝐌-𝐁𝐎𝐓 ✨
 
-👋 Hey there! I'm **MR-TAMIM07**, a passionate coder and lifelong learner.
+![Profile Image](https://files.catbox.moe/qmy8ey.jpg)
 
+🩶𝐓𝐇𝐀𝐍𝐊 𝐘𝐎𝐔 𝐅𝐎𝐑 𝐔𝐒𝐈𝐍𝐆 𝐌𝐄
 ---
 
 ## 🚀 About Me
@@ -26,10 +27,11 @@
 
 ---
 
-## 🔗 Let's Connect!
+## 🔗 𝐋𝐞𝐭'𝐬 𝐂𝐨𝐧𝐧𝐞𝐜𝐭 𝐓𝐨 𝐀𝐝𝐦𝐢𝐧!
 
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/MR-TAMIM07)  
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?logo=linkedin&logoColor=white&style=for-the-badge)](https://linkedin.com/in/your-linkedin)  
+[![Facebook](https://img.shields.io/badge/-Facebook-1877F2?logo=facebook&logoColor=white&style=for-the-badge)](https://www.facebook.com/its.x.tamim)  
+[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge)](https://instagram.com/tamim__4047)  
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/MR-TAMIM07)
 
 ---
 
