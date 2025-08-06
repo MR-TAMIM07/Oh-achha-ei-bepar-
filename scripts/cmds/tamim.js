@@ -2,7 +2,7 @@ module.exports = {
  config: {
 	 name: "tamim",
 	 version: "1.0",
-	 author: "AceGun",
+	 author: "Tamim",
 	 countDown: 5,
 	 role: 0,
 	 shortDescription: "no prefix",
@@ -15,7 +15,7 @@ module.exports = {
  if (event.body && event.body.toLowerCase() === "tamim") {
  return message.reply({
  body: " 「❥︎----ღ᭄_ʜᴇʏ ..\n❥︎----ღ᭄_  ᴮᴿᴼᵀᴴᴱᴿ❞࿐.♡.\nᥫᩣ ɪᴛ’s ᴛᴀᴍɪᴍ\n\n𝐁𝐎𝐓 𝐎𝐖𝐍𝐄𝐑\n𝐓𝐀𝐌𝐈𝐌♡」",
- attachment: await global.utils.getStreamFromURL("https://files.catbox.moe/j2f505.mp4")
+ attachment: await global.utils.getStreamFromURL("https://files.catbox.moe/3cebc7.mp4")
  });
  }
  }
