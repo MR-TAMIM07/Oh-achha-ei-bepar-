@@ -56,7 +56,7 @@ module.exports = {
       if (nickNameBot)
         api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
 
-      const video = (await axios.get("https://files.catbox.moe/kioug2.mp4", { responseType: "stream" })).data;
+      const video = (await axios.get("https://files.catbox.moe/7vzv8w.mp4", { responseType: "stream" })).data;
 
       return message.send({
         body: getLang("welcomeMessage", prefix),
