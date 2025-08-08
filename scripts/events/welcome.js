@@ -22,7 +22,7 @@ module.exports = {
         `💮 𝐀𝐒𝐒𝐀𝐋𝐀𝐌𝐔𝐀𝐋𝐀𝐈𝐊𝐔𝐌 ꨄ︎\n` +
         `\n🔗 𝑩𝒐𝒕 𝑪𝒐𝒏𝒏𝒆𝒄𝒕𝒆𝒅 𝑻𝒐 𝑻𝒉𝒆 𝑮𝒓𝒐𝒖𝒑!` +
         `\n🔹 𝑷𝒓𝒆𝒇𝒊𝒙: %1` +
-        `\n🧑‍💻 𝑶𝒘𝒏𝒆𝒓: https://www.facebook.com/its.x.tamim` +
+        `\n🎀 𝑶𝒘𝒏𝒆𝒓: https://www.facebook.com/its.x.tamim` +
         `\n💬 𝑭𝒐𝒓 𝑪𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝑼𝒔𝒆: %1help`,
       multiple1: "𝑻𝒐 𝑻𝒉𝑬",
       multiple2: "𝑻𝒐 𝑶𝒖𝑹",
@@ -109,7 +109,7 @@ module.exports = {
 
       form.body = welcomeMessage;
 
-      const video = (await axios.get("https://files.catbox.moe/kioug2.mp4", { responseType: "stream" })).data;
+      const video = (await axios.get("https://files.catbox.moe/w0fvis.gif", { responseType: "stream" })).data;
 
       form.attachment = video;
 
