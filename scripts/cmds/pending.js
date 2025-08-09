@@ -6,9 +6,9 @@ module.exports = {
     name: "pending",
     aliases: ["pen", "pend", "pe"],
     version: "1.8.0",
-    author: "♡Modified by 𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪",
+    author: "𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪",
     countDown: 5,
-    role: 1,
+    role: 2,
     shortDescription: "Handle pending requests",
     longDescription: "Approve or reject pending users or group requests with style + video 🎥",
     category: "utility",
@@ -46,7 +46,7 @@ module.exports = {
         const name = group.name || (await usersData.getName(group.threadID)) || "Unknown Group";
 
         await api.sendMessage({
-          body: `✅ | 𝗚𝗿𝗼𝘂𝗽 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 🎉\n📌 Name: ${name}\n\n📜🎀 Type: ${global.GoatBot.config.prefix}help to see commands!\n🦋 Approved by: 𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪`,
+          body: `✅ | 𝗚𝗿𝗼𝘂𝗽 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 ♡\n📌 Name: ${name}\n\n🎀 Type: ${global.GoatBot.config.prefix}help to see commands!\n🦋 Approved by: 𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪`,
           attachment: await global.utils.getStreamFromURL("https://files.catbox.moe/rhew9e.mp4")
         }, group.threadID);
 
