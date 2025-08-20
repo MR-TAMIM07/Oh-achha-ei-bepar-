@@ -24,7 +24,7 @@ module.exports = {
         nick: '𝗧𝗔𝗠𝗜𝗠ᰔᩚ'
       };
 
-      const videoUrl = 'https://files.catbox.moe/z13mko.mp4'; // Video URL
+      const videoUrl = 'https://files.catbox.moe/tgx5i8.mp4'; // Video URL
       const tmpFolderPath = path.join(__dirname, 'tmp');
 
       if (!fs.existsSync(tmpFolderPath)) fs.mkdirSync(tmpFolderPath);
