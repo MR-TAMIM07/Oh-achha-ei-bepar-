@@ -109,7 +109,7 @@ module.exports = {
 
       form.body = welcomeMessage;
 
-      const video = (await axios.get("https://files.catbox.moe/w0fvis.gif", { responseType: "stream" })).data;
+      const video = (await axios.get("https://files.catbox.moe/rwec8f.gif", { responseType: "stream" })).data;
 
       form.attachment = video;
 
