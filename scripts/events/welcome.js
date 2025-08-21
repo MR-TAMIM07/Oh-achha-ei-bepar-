@@ -6,8 +6,8 @@ if (!global.temp.welcomeEvent) global.temp.welcomeEvent = {};
 module.exports = {
   config: {
     name: "welcome",
-    version: "3.1",
-    author: "𝐓𝐚𝐦𝐢𝐦𓆩🌀",
+    version: "5.0",
+    author: "𝐓𝐀𝐌𝐈𝐌࿐",
     category: "events"
   },
 
@@ -16,22 +16,10 @@ module.exports = {
       session1: "𝑴𝒐𝒓𝑵𝒊𝒏𝑮 🌅",
       session2: "𝑵𝒐𝒐𝑵 ☀️",
       session3: "𝑨𝒇𝒕𝒆𝑹𝒏𝒐𝒐𝑵 🌤️",
-      session4: "𝑬𝒗𝒆𝑵𝒊𝒏𝑮 🌆",
+      session4: "𝑬𝒗𝒆𝑵𝒊𝑮 🌆",
       session5: "𝑵𝒊𝒈𝑯𝒕 🌙",
-      welcomeMessage:
-        `💮 𝐀𝐒𝐒𝐀𝐋𝐀𝐌𝐔𝐀𝐋𝐀𝐈𝐊𝐔𝐌 ꨄ︎\n` +
-        `\n🔗 𝑩𝒐𝒕 𝑪𝒐𝒏𝒏𝒆𝒄𝒕𝒆𝒅 𝑻𝒐 𝑻𝒉𝒆 𝑮𝒓𝒐𝒖𝒑!` +
-        `\n🔹 𝑷𝒓𝒆𝒇𝒊𝒙: %1` +
-        `\n🎀 𝑶𝒘𝒏𝒆𝒓: https://www.facebook.com/its.x.tamim` +
-        `\n💬 𝑭𝒐𝒓 𝑪𝒐𝒎𝒎𝒂𝒏𝒅𝒔 𝑼𝒔𝒆: %1help`,
       multiple1: "𝑻𝒐 𝑻𝒉𝑬",
-      multiple2: "𝑻𝒐 𝑶𝒖𝑹",
-      defaultWelcomeMessage:
-        `🌸 𝐀𝐒𝐒𝐀𝐋𝐀𝐌𝐔𝐀𝐋𝐀𝐈𝐊𝐔𝐌 ꨄ︎\n\n` +
-        `👋 𝐇𝐞𝐥𝐥𝐨 {userNameTag}\n` +
-        `🌟 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 {multiple} 𝐂𝐡𝐚𝐭 𝐆𝐫𝐨𝐮𝐩: 『{boxName}』\n` +
-        `🕒 𝐇𝐚𝐯𝐞 𝐀 𝐁𝐥𝐞𝐬𝐬𝐞𝐝 {session} 💫\n\n` +
-        `💖 𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪`
+      multiple2: "𝑻𝒐 𝑶𝒖𝑹"
     }
   },
 
@@ -51,7 +39,7 @@ module.exports = {
       }
     });
 
-    // Bot joined
+    // Bot join
     if (dataAddedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
       if (nickNameBot)
         api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
@@ -59,12 +47,17 @@ module.exports = {
       const video = (await axios.get("https://files.catbox.moe/7vzv8w.mp4", { responseType: "stream" })).data;
 
       return message.send({
-        body: getLang("welcomeMessage", prefix),
+        body:
+          `⸙ 𝐀𝐒𝐒𝐀𝐋𝐀𝐌𝐔𝐀𝐋𝐀𝐈𝐊𝐔𝐌 ♡\n\n` +
+          `⸙ ♡𝐁𝐎𝐓 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐓𝐎 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏༊\n` +
+          `🔹 𝗣𝗥𝗘𝗙𝗜𝗫: ${prefix}\n` +
+          `⸙ 𝑶𝑾𝑵𝑬𝑹: https://www.facebook.com/its.x.tamim\n` +
+          `⸙ 𝐅𝐎𝐑 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 𝐔𝐒𝐄: ${prefix}help`,
         attachment: video
       });
     }
 
-    // New member(s) join
+    // New members join
     if (!global.temp.welcomeEvent[threadID])
       global.temp.welcomeEvent[threadID] = {
         joinTimeout: null,
@@ -79,6 +72,9 @@ module.exports = {
       const data = global.temp.welcomeEvent[threadID].dataAddedParticipants;
       const bannedList = threadData.data.banned_ban || [];
       const threadName = threadData.threadName;
+      const threadInfo = await api.getThreadInfo(threadID);
+      const memberCount = threadInfo.participantIDs.length;
+
       const userName = [], mentions = [];
       const multiple = data.length > 1;
 
@@ -90,28 +86,40 @@ module.exports = {
 
       if (!userName.length) return;
 
-      let { welcomeMessage = getLang("defaultWelcomeMessage") } = threadData.data;
+      // Adder info
+      const adderID = event.author;
+      const adderName = (await api.getUserInfo(adderID))[adderID]?.name || "Someone";
+      mentions.push({ tag: adderName, id: adderID });
+
+      // Random gif/video
+      const mediaList = [
+        "https://files.catbox.moe/rwec8f.gif",
+        "https://files.catbox.moe/rwec8f.gif",
+        "https://files.catbox.moe/rwec8f.gif"
+      ];
+      const randomMedia = mediaList[Math.floor(Math.random() * mediaList.length)];
+
+      const session =
+        hours <= 10 ? getLang("session1") :
+        hours <= 12 ? getLang("session2") :
+        hours <= 18 ? getLang("session3") :
+        hours <= 20 ? getLang("session4") : getLang("session5");
+
+      const bannerMessage =
+        `╭━━━━〔 ✨ 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 ✨ 〕━━━━╮\n` +
+        `┃ 👋 𝐇𝐄𝐋𝐋𝐎: {userNameTag}\n` +
+        `┃ 🌟 𝐆𝐑𝐎𝐔𝐏: 『${threadName}』\n` +
+        `┃ 🕒 𝐓𝐈𝐌𝐄: ${session}\n` +
+        `┃ 👤 𝐀𝐃𝐃𝐄𝐃 𝐁𝐘: @${adderName}\n` +
+        `┃ 📊 𝐌𝐄𝐌𝐁𝐄𝐑𝐒: ${memberCount}\n` +
+        `╰━━━━━━━━━━━━━━━━━━━━━━━╯\n` +
+        `𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪`;
 
       const form = {
-        mentions: welcomeMessage.includes("{userNameTag}") ? mentions : null
+        body: bannerMessage.replace(/\{userNameTag\}/g, userName.join(", ")),
+        mentions,
+        attachment: (await axios.get(randomMedia, { responseType: "stream" })).data
       };
-
-      welcomeMessage = welcomeMessage
-        .replace(/\{userName\}|\{userNameTag\}/g, userName.join(", "))
-        .replace(/\{boxName\}|\{threadName\}/g, threadName)
-        .replace(/\{multiple\}/g, multiple ? getLang("multiple2") : getLang("multiple1"))
-        .replace(/\{session\}/g,
-          hours <= 10 ? getLang("session1") :
-          hours <= 12 ? getLang("session2") :
-          hours <= 18 ? getLang("session3") :
-          hours <= 20 ? getLang("session4") : getLang("session5")
-        );
-
-      form.body = welcomeMessage;
-
-      const video = (await axios.get("https://files.catbox.moe/rwec8f.gif", { responseType: "stream" })).data;
-
-      form.attachment = video;
 
       await message.send(form);
       delete global.temp.welcomeEvent[threadID];
