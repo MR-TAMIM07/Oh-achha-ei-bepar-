@@ -22,14 +22,14 @@
   <a href="https://github.com/MR-TAMIM07" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-💻-ff4500?style=for-the-badge&logo=github" alt="GitHub"/>
   </a>
-  <a href="https://www.instagram.com/MR-TAMIM07" target="_blank">
+  <a href="https://www.instagram.com/tamim__4047" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-📸-e1306c?style=for-the-badge&logo=instagram" alt="Instagram"/>
   </a>
-  <a href="https://www.facebook.com/MR-TAMIM07" target="_blank">
-    <img src="https://img.shields.io/badge/Facebook-📘-1877f2?style=for-the-badge&logo=facebook" alt="Facebook"/>
+  <a href="https://www.facebook.com/its.x.tamim" target="_blank">
+    <img src="https://img.shields.io/badge/Facebook-⸙-1877f2?style=for-the-badge&logo=facebook" alt="Facebook"/>
   </a>
-  <a href="https://www.linkedin.com/in/MR-TAMIM07" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-🔗-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn"/>
+  <a href="t.me/IMTAMIMOK69" target="_blank">
+    <img src="https://img.shields.io/badge/Telegram-⸙-0A66C2?style=for-the-badge&logo=telegram" alt="Telegram"/>
   </a>
 </p>
 
