@@ -1,5 +1,4 @@
 const os = require("os");
-const fs = require("fs-extra");
 const axios = require("axios");
 
 const startTime = new Date();
@@ -8,84 +7,82 @@ module.exports = {
   config: {
     name: "uptime",
     aliases: ["up"],
-    author: "NIROB",
-    countDown: 0,
+    author: "𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪",
+    countDown: 5,
     role: 0,
-    category: "system",
-    longDescription: {
-      en: "Get System Information",
-    },
+    category: "⚡System Info⚡",
+    shortDescription: "Show stylish uptime",
+    longDescription: "Get uptime & system status in anime styled premium design",
   },
 
-  onStart: async function ({ api, event, args, threadsData, usersData }) {
+  onStart: async function ({ api, event, threadsData, usersData }) {
     try {
+      // Runtime
       const uptimeInSeconds = (new Date() - startTime) / 1000;
-      const days = Math.floor(uptimeInSeconds / (3600 * 24));
-      const hours = Math.floor((uptimeInSeconds % (3600 * 24)) / 3600);
-      const minutes = Math.floor((uptimeInSeconds % 3600) / 60);
-      const secondsLeft = Math.floor(uptimeInSeconds % 60);
-      const uptimeFormatted = `${days}d ${hours}h ${minutes}m ${secondsLeft}s`;
+      const d = Math.floor(uptimeInSeconds / (3600 * 24));
+      const h = Math.floor((uptimeInSeconds % (3600 * 24)) / 3600);
+      const m = Math.floor((uptimeInSeconds % 3600) / 60);
+      const s = Math.floor(uptimeInSeconds % 60);
+      const runtime = `${d}d ${h}h ${m}m ${s}s`;
 
-      const cpuUsage = os.cpus().reduce((acc, curr) => acc + curr.times.user, 0) / os.cpus().length;
-      const totalMemoryGB = os.totalmem() / 1024 ** 3;
-      const freeMemoryGB = os.freemem() / 1024 ** 3;
-      const usedMemoryGB = totalMemoryGB - freeMemoryGB;
+      // System
+      const cpuUsage = os.cpus().reduce((a, b) => a + b.times.user, 0) / os.cpus().length;
+      const totalMem = os.totalmem() / 1024 ** 3;
+      const freeMem = os.freemem() / 1024 ** 3;
+      const usedMem = totalMem - freeMem;
 
-      const allUsers = await usersData.getAll();
-      const allThreads = await threadsData.getAll();
-      const currentDate = new Date();
-      const date = currentDate.toLocaleDateString("en-US");
-      const time = currentDate.toLocaleTimeString("en-US", {
-        timeZone: "Asia/dhaka",
-        hour12: true,
-      });
+      // Users & threads
+      const users = await usersData.getAll();
+      const threads = await threadsData.getAll();
 
-      const timeStart = Date.now();
-      await api.sendMessage("🔎 Checking system info...", event.threadID);
-      const ping = Date.now() - timeStart;
+      // Date & time
+      const now = new Date();
+      const date = now.toLocaleDateString("en-US");
+      const time = now.toLocaleTimeString("en-US", { timeZone: "Asia/Dhaka", hour12: true });
 
-      let pingStatus = "⛔ Bad System";
-      if (ping < 1000) pingStatus = "✅ Smooth System";
+      // Ping
+      const pingStart = Date.now();
+      await api.sendMessage("⚡ Summoning system status...", event.threadID);
+      const ping = Date.now() - pingStart;
+      const status = ping < 1000 ? "🌸 Ultra Smooth" : "💀 Lag Detected";
 
-      const systemInfo = `♡   ∩_∩
-（„• ֊ •„)♡
-╭─∪∪────────────⟡
-│ 𝗨𝗣𝗧𝗜𝗠𝗘 𝗜𝗡𝗙𝗢
-├───────────────⟡
-│ ⏰ Runtime: ${uptimeFormatted}
-│ OS: ${os.type()} ${os.arch()}
-│ CPU: ${os.cpus()[0].model}
-│ Storage: ${usedMemoryGB.toFixed(2)} GB / ${totalMemoryGB.toFixed(2)} GB
-│ CPU Usage: ${cpuUsage.toFixed(1)}%
-│ RAM: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(1)} MB
-├───────────────⟡
-│ 📆 Date: ${date}
-│ ⏱️ Time: ${time}
-│ 👥 Users: ${allUsers.length}
-│ 🧵 Threads: ${allThreads.length}
-│ 📡 Ping: ${ping}ms
-│ Status: ${pingStatus}
-╰───────────────⟡`;
+      // Stylish output
+      const info = `
+✦──────────★──────────✦
+        ⚡ 𝗨𝗣𝗧𝗜𝗠𝗘 𝗦𝗧𝗔𝗧𝗨𝗦 ⚡
+✦──────────★──────────✦
 
-      // Media from catbox (video)
-      let attachment = null;
-      const mediaUrl = "https://files.catbox.moe/qvcp2m.mp4";
+⏰ Runtime » ${runtime}
+💻 OS » ${os.type()} (${os.arch()})
+⚙️ CPU » ${os.cpus()[0].model}
+💾 Storage » ${usedMem.toFixed(2)} GB / ${totalMem.toFixed(2)} GB
+📊 CPU Usage » ${cpuUsage.toFixed(1)}%
+📌 RAM Used » ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(1)} MB
 
-      if (mediaUrl.endsWith(".jpg") || mediaUrl.endsWith(".png") || mediaUrl.endsWith(".mp4")) {
-        const response = await axios.get(mediaUrl, { responseType: "stream" });
-        attachment = response.data;
-      }
+📆 Date » ${date}
+🕒 Time » ${time}
+👥 Users » ${users.length}
+💬 Threads » ${threads.length}
+📡 Ping » ${ping}ms
+✨ Status » ${status}
 
-      api.sendMessage(
-        {
-          body: systemInfo,
-          attachment,
-        },
-        event.threadID,
-      );
-    } catch (error) {
-      console.error("System info error:", error);
-      api.sendMessage("⚠️ Could not retrieve system information.", event.threadID);
+✦──────────★──────────✦
+   𓆩𝐂.𝐄.𝐎⸙𝐓𝐀𝐌𝐈𝐌𓆪
+✦──────────★──────────✦`;
+
+      // Random media
+      const videos = [
+        "https://files.catbox.moe/01lzcv.mp4",
+        "https://files.catbox.moe/01lzcv.mp4",
+        "https://files.catbox.moe/01lzcv.mp4"
+      ];
+      const mediaUrl = videos[Math.floor(Math.random() * videos.length)];
+      const res = await axios.get(mediaUrl, { responseType: "stream" });
+
+      api.sendMessage({ body: info, attachment: res.data }, event.threadID);
+    } catch (e) {
+      console.error("Uptime Error:", e);
+      api.sendMessage("⚠️ Error fetching system info!", event.threadID);
     }
   },
 };
