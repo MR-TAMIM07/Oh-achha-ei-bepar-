@@ -43,25 +43,25 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n\n✧ 『 ${category.toUpperCase()} 』 ✧`;
+          msg += `\n\n𖤐 『 ${category.toUpperCase()} 』 𖤐`;
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
             const cmds = names.slice(i, i + 3).map((item) => `✦ ${item}`);
             msg += `\n${cmds.join("   ")}`;
           }
-          msg += `\n━━━━━━━━━━━━━━━`;
+          msg += `\n✦••┈┈┈┈┈┈┈┈┈┈┈┈••✦`;
         }
       });
 
       const totalCommands = commands.size;
       msg += `\n\n📌 𝗧𝗼𝘁𝗮𝗹 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀: ${totalCommands}`;
-      msg += `\n🌟 𝗨𝘀𝗲: ${prefix}help [command]`;
-      msg += `\n\n╰━━━『 🩶 ᴛᴀᴍɪᴍ_ʙᴏᴛ 🎀 』━━━╯`;
+      msg += `\n❖ 𝗨𝘀𝗲: ${prefix}help [command]`;
+      msg += `\n\n✦••┈┈┈┈┈┈┈┈┈┈『 🩶 Tᴀᴍɪᴍ_ʙᴏᴛ 🎀 』┈┈┈┈┈┈┈┈┈┈••✦`;
 
       const helpMedia = [ 
-        "https://files.catbox.moe/gyt9g2.mp4", 
-        "https://files.catbox.moe/gyt9g2.mp4" 
+        "https://files.catbox.moe/9q5lgk.mp4", 
+        "https://files.catbox.moe/9q5lgk.mp4" 
       ];
       const media = helpMedia[Math.floor(Math.random() * helpMedia.length)];
 
