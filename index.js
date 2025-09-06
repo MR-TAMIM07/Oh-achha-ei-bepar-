@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Default route
 app.get("/", (req, res) => {
-  res.send("Hello World! 🚀 Your app is running successfully.");
+  res.send("Hello World! Your app is running successfully.");
 });
 
 // Example route
@@ -21,5 +21,5 @@ app.get("/ping", (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
