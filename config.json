@@ -13,12 +13,12 @@
 	"language": "en",
 	"notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
 	"nickNameBot": "⋆⎯꯭̽𝅃꯭᳚𝐓͟ᴀ͟ᴍ͟ɪ͟ᴍ͟ 𝐁͟ᴏ͟ᴛ͟ 𝅃꯭꯭᳚ ⃪꯭〬⃝𐏓꯭꯭ ̶ͤ𝄄𝄀꯭𝄄꯭ ⃪͢.",
-	"prefix": ",",
+	"prefix": ".",
 	"adminOnly": {
 		"enable": false,
 		"ignoreCommand": []
 	},
-	"adminBot": ["100076339585458","100000317130398"],
+	"adminBot": ["100076339585458","100076339585458","100076339585458"],
 	"whiteListMode": {
 		"enable": false,
 		"whiteListIds": [],
