@@ -5,7 +5,7 @@ const app = express();
 app.get("/", (req, res) => res.send("✅ Bot is Running 24/7!"));
 
 const PORT = process.env.PORT || 3000;
-const URL = "https://tamim-82bf.onrender.com"; // tor render URL
+const URL = "https://t4m1m.onrender.com"; // tor render URL
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
