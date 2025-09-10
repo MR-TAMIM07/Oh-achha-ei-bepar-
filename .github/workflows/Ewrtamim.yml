@@ -1,10 +1,10 @@
-name: nirob
+name: tamim
 
 on:
   push:
-    branches: [ shan ]
+    branches: [ tamim ]
   pull_request:
-    branches: [ shan ]
+    branches: [ tamim ]
 jobs:
   build:
     runs-on: ubuntu-latest
